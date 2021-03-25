@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bundled File -->
+    <script src="./thumbpress.js"></script>
+    <title>Thumbpress 😁</title>
+  </head>
+  <body>
+    <h1>Thumbpress 😁</h1>
+    <div>
+      <button onClick="generate()">REgenerate</button>
+    </div>
+    <div>
+      <img id="thunmb" />
+    </div>
+
+    <script>
+      const urls = [
+        "https://pbs.twimg.com/media/EZ-hSD6WoAMEk9V?format=jpg&name=large",
+        "https://pbs.twimg.com/media/EZm28BnX0AIJPDd?format=jpg&name=medium",
+        "https://pbs.twimg.com/media/EZw5H_AWAAA-gMJ?format=png&name=small",
+        "https://pbs.twimg.com/media/EZxM_nkXYAMx8YF?format=jpg&name=medium",
+        "https://pbs.twimg.com/media/EZm7Q8-WoAAvnH-?format=jpg&name=small",
+        "https://pbs.twimg.com/media/EYpJXGyUwAAkvGN?format=jpg&name=large",
+        "https://pbs.twimg.com/media/ExCymAMWQAAfaqa?format=jpg&name=medium",
+        "https://pbs.twimg.com/media/Ew8dkzPWQAAx0_G?format=jpg&name=small",
+        "https://pbs.twimg.com/media/EwxX_1tXMAQz4vi?format=jpg&name=small",
+        "https://pbs.twimg.com/media/EwnPu2fWEAEHHqA?format=jpg&name=medium",
+      ];
+
+      function generate() {
+        document.getElementById("thunmb").src = "";
+        Thumpress(urls, 512, (dataUrl_) => {
+          document.getElementById("thunmb").src = dataUrl_;
+        });
+      }
+
+      generate();
+    </script>
+  </body>
+</html>
